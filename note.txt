@@ -1,0 +1,96 @@
+install the dependecies:
+    1. npm install -D tailwindcss
+    2. npx tailwindcss init
+    content: ["./src/**/*.{html,js}"], replace content in tailwindcss.config
+    3. @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+            paste them in index.css
+    4. add codes from js to inde.css
+
+    5. delete logo, report.. setup, app.test, app.css,
+    6. copy and paste assets
+    create dir styles, +
+         global.js (reusable stylessheets)
+
+    7. in scr: create components dir 
+        Button.jsx
+        Download.jsx
+        Features.jsx
+        SectionWrapper.jsx (to wrap all the sections)
+
+    8 import all components into App.js
+        best prac: create index.js in components
+                import all components into index
+                export them in index
+    App.js   import {Download, Features, SectionWrapper} from './components';
+
+    app.js
+    in return
+    <> 
+        <SectionWrapper
+        title = "Your Favorite Place to find the best"
+        description =
+        showBtn // to show btn
+        mockUpImg  // for the mockup images
+        banner ="banner" // initial banner
+      />
+    </>
+    we impport the assets dir
+
+to SectionWrapper.js
+    deconstruct the props 
+    className to main div 
+    import styles/global
+    import assets
+    className={`min-h-screen ${styles.section} ${styles.bgWhite} ${banner}`} 
+    text on left img on right
+    banner is the dangling backgroung in assets
+
+    we create new div in root div
+        add div
+            add text + styles
+            {showBtn} import Button
+
+to BUTTONS.JS
+    import styles
+    get the props assetsUrl, link,
+    in return: div + className + onClick 
+        add img inside div
+        nest div for the texts below img
+        add className to text parent div 
+
+to SectionWrapper nest a div below 4th in main div (to handle mockup)
+add extra style to parent div for text, img boxClass w-11/12 sm:w-full`}>
+
+    added js setup for tailwindcss config file
+---------------------------------------------------------------------
+
+duplicate SectionWrapper + changes to create the next section:
+    chg: title, description, rm: Button, ch img, rm: banner
+    add reverse (new prop)
+        pass new prop to SectionWrapper.js
+            in main div: set condition {if reverese then bgWhite else bgPrimary}
+            same to inner div
+            same in description div
+                ~h1, ~description
+
+
+FEATURE  below the 2nd SectionWrapper
+    to Features.jsx:
+    div 
+        div
+
+duplicate SectionWrapper twice after features in App.js
+ make the changes
+
+
+DOWNLOAD SECTION
+ imports
+
+ div   
+    div
+
+
+
+    add footer
